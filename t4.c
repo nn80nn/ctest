@@ -12,6 +12,22 @@ typedef struct qmatrix
 } qmatrix;
 
 
+
+typedef struct cplx{
+    double dest;
+    double mnim;
+
+} cplx;
+
+/* Get a type name string for the argument x */
+#define TYPE_NAME(X) _Generic((X), \
+      int: "int", \
+      char: "char", \
+      double: "double", \
+      default: "complex")
+
+
 int main(void) {
+    printf("Type name: %s\n", TYPE_NAME(4));
     return 0;
 }
