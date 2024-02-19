@@ -5,6 +5,7 @@
 
 typedef struct qmatrix
 {
+    void (*vvod) (struct qmatrix*, void* data);
     void (*create)(struct qmatrix*, void* data);
     void (*show)(struct qmatrix*, void* data);
     void (*trancpon)(struct qmatrix*, void* data);
@@ -26,20 +27,20 @@ typedef struct cplx{
       int: "int", \
       char: "char", \
       double: "double", \
-      default: "default)
+      default: "default")
 
 
-void create() {
-    int n;
-    scanf(&n);
-    pa = (double *) malloc((n*n) * sizeof (double));
-    if (pa == NULL) { /*Проверка успешности выделения памяти.*/
+/*void create() {
+    int n, m;
+    scanf(&n, &m);
+    pa = (double *) malloc((n*m) * sizeof (double));
+    if (pa == NULL) { 
         printf("Не удалось выделить память.");
-        exit(EXIT_FAILURE); /*Аварийное завершение программы.*/
+        exit(EXIT_FAILURE); 
     };
     for (i = 0; i < n; i++)
     {
-       for (j = 0; j < n; j++)
+       for (j = 0; j < m; j++)
        {
         scanf(pa[i,j])
        }
@@ -47,10 +48,22 @@ void create() {
     }
     
 
+}*/
+
+void vvod() {
+    int n, m;
+    printf("Введите размеры матрицы:");
+    scanf(&n, &m);
+    for (i = 0; i < n*m; i++)
+    {
+        /* code */
+    }
+    
 }
 
 
 int main(void) {
-    printf("Type name: %s\n", TYPE_NAME(4));
+    char t = "12.4";
+    printf("Type name: %s\n", TYPE_NAME(t));
     return 0;
 }
