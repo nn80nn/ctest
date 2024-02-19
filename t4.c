@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <complex.h>
 #include  <stdlib.h>
+#include <string.h>
 
 
 typedef struct qmatrix
@@ -22,14 +23,14 @@ typedef struct cplx{
 
 } cplx;
 
-/* Get a type name string for the argument x */
+/* Get a type name string for the argument x 
 #define TYPE_NAME(X) _Generic((X), \
       int: "int", \
       char: "char", \
       double: "double", \
       default: "default")
 
-
+*/
 /*void create() {
     int n, m;
     scanf(&n, &m);
@@ -49,11 +50,15 @@ typedef struct cplx{
     
 
 }*/
+void hello() {
+    printf("");
+}
+
 
 void vvod() {
-    int n, m;
+    int n, m, i;
     printf("Введите размеры матрицы:");
-    scanf(&n, &m);
+    scanf("%d%d",&n, &m);
     for (i = 0; i < n*m; i++)
     {
         /* code */
@@ -61,9 +66,20 @@ void vvod() {
     
 }
 
+int check(char *str)  {
+    if (strchr(str, "i") != NULL) {
+        return 2; }
+    else if (str, ".")
+    {
+        return 1;
+    }
+    return 0;
+}
 
 int main(void) {
-    char t = "12.4";
-    printf("Type name: %s\n", TYPE_NAME(t));
+    char t[2] = "12";
+    printf("Type name: %s\n", check(*t));
+
+
     return 0;
 }
