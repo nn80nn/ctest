@@ -76,7 +76,8 @@ int main(void) {
 
 
 int check(char *str)  {
-    if (strchr(str, 12) != NULL) {
+    int ch = 'i';
+    if (strchr(str, ch) != NULL) {
         return 2; }
     else if (str, ".")
     {
