@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <complex.h>
-#include  <stdlib.h>
+#include <stdlib.h>
 #include <string.h>
 
+int check(char *str);
 
 typedef struct qmatrix
 {
@@ -65,21 +66,21 @@ void vvod() {
     }
     
 }
+int main(void) {
+    char t[2] = "12";
+    printf("Type name: %s\n", check(t));
+
+
+    return 0;
+}
+
 
 int check(char *str)  {
-    if (strchr(str, "i") != NULL) {
+    if (strchr(str, 12) != NULL) {
         return 2; }
     else if (str, ".")
     {
         return 1;
     }
-    return 0;
-}
-
-int main(void) {
-    char t[2] = "12";
-    printf("Type name: %s\n", check(*t));
-
-
     return 0;
 }
