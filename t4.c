@@ -5,14 +5,20 @@
 
 int check(char *str);
 
+typedef struct matrix
+{
+    void (*vvod) (struct matrix*, void* data);
+    void (*create)(struct matrix*, void* data);
+    void (*show)(struct matrix*, void* data);
+    void (*trancpon)(struct matrix*, void* data);
+    void (*multmat)(struct matrix*, void* data);
+    void (*multline)(struct matrix*, void* data);
+} matrix;
+
+
 typedef struct qmatrix
 {
-    void (*vvod) (struct qmatrix*, void* data);
-    void (*create)(struct qmatrix*, void* data);
-    void (*show)(struct qmatrix*, void* data);
-    void (*trancpon)(struct qmatrix*, void* data);
-    void (*multmat)(struct qmatrix*, void* data);
-    void (*multline)(struct qmatrix*, void* data);
+    struct 
     void (*opred)(struct qmatrix*, void* data);
 } qmatrix;
 
